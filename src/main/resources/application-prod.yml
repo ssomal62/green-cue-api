@@ -1,0 +1,47 @@
+server:
+  port: 8080
+
+spring:
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5438/greencue
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  # JPA Configuration
+  
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      enabled: true
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2000ms
+
+mqtt:
+  enabled: true
+  client-id: SmartFarmPolicy
+  cert-path: ${MQTT_CERT_PATH}
+  key-path: ${MQTT_KEY_PATH}
+  ca-path: ${MQTT_CA_PATH}
+  endpoint: ${MQTT_ENDPOINT}
+  topics:
+    sensor-data: smartfarm/sensor/+/data
+    control-command: smartfarm/control/+/command
+    led-control: smartfarm/control/led/+
+    fan-control: smartfarm/control/fan/+
+    automation: smartfarm/automation/+
+    status: smartfarm/status/+
+
+logging:
+  level:
+    com.greencue: INFO
+    org.springframework.web: WARN
+    org.hibernate.SQL: WARN
