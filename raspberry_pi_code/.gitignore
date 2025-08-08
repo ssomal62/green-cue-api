@@ -1,0 +1,39 @@
+# AWS IoT 인증서 파일들 (보안상 Git에 업로드하지 않음)
+certs/*.pem
+certs/*.crt
+certs/*.key
+certs/*.pem.crt
+certs/*.pem.key
+
+# 환경변수 파일
+.env
+.env
+
+# 로그 파일들
+*.log
+logs/
+
+# Python 캐시 파일들
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 가상환경
+venv/
+env/
+ENV/
+
+# IDE 설정 파일들
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 시스템 파일들
+.DS_Store
+Thumbs.db
+
+# 임시 파일들
+*.tmp
+*.temp

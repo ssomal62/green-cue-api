@@ -1,0 +1,11 @@
+# AWS IoT Device SDK for Python (라즈베리파이 전용)
+awscrt>=0.19.0
+awsiot>=0.0.0
+
+# 센서 및 GPIO 라이브러리 (라즈베리파이 전용)
+Adafruit_DHT>=1.4.0
+smbus2>=0.4.2
+RPi.GPIO>=0.7.1
+
+# 유틸리티
+python-dotenv>=0.19.0

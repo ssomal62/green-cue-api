@@ -69,6 +69,5 @@ greencue_project_plan.md
 git_branch_guide.md
 
 ### Raspberry Pi Code ###
-raspberry_pi_code/README.md
-
+raspberry_pi_code/**/*README*
 .gitmessage
