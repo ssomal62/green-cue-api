@@ -68,4 +68,7 @@ application-secret.yml
 greencue_project_plan.md
 git_branch_guide.md
 
+### Raspberry Pi Code ###
+raspberry_pi_code/README.md
+
 .gitmessage

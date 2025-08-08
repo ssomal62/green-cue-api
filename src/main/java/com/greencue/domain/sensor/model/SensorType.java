@@ -32,4 +32,14 @@ public enum SensorType {
         }
         throw new IllegalArgumentException("Unknown sensor type code: " + code);
     }
+
+    public static SensorType fromMqttType(String mqttType) {
+        if (mqttType == null) return null;
+        return switch (mqttType.toLowerCase()) {
+            case "temperature" -> TEMPERATURE;
+            case "humidity" -> HUMIDITY;
+            case "light" -> LIGHT;
+            default -> throw new IllegalArgumentException("Unknown mqtt sensor type: " + mqttType);
+        };
+    }
 }

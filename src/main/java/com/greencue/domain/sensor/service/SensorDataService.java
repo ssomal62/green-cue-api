@@ -4,7 +4,6 @@ import com.greencue.domain.sensor.api.dto.SensorDataRequest;
 import com.greencue.domain.sensor.api.dto.SensorDataResponse;
 import com.greencue.domain.sensor.model.SensorData;
 import com.greencue.domain.sensor.repository.SensorDataRepository;
-import com.greencue.domain.sensor.exception.InvalidSensorDataException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -21,7 +19,7 @@ public class SensorDataService {
 
     private final SensorDataRepository sensorDataRepository;
     private final SimpMessagingTemplate messagingTemplate;
-    private RedisTemplate<String, Object> redisTemplate; // Optional - Redis가 비활성화되면 null
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Autowired
     public SensorDataService(SensorDataRepository sensorDataRepository,
